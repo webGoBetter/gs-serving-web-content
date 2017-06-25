@@ -65,15 +65,15 @@ include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/ma
 include::complete/src/main/java/hello/GreetingController.java[]
 ----
 
-This controller is concise and simple, but there's plenty going on. Let's break it down step by step.
+这个控制器简洁明了，但是做了很多。让我们一步一步地分解它。
 
-The `@RequestMapping` annotation ensures that HTTP requests to `/greeting` are mapped to the `greeting()` method.
+ `@RequestMapping` 注解确保 `/greeting` 的HTTP请求映射到 `greeting()` 方法上。
 
-NOTE: The above example does not specify `GET` vs. `PUT`, `POST`, and so forth, because `@RequestMapping` maps all HTTP operations by default. Use `@RequestMapping(method=GET)` to narrow this mapping.
+NOTE: 以上例子不指定 `GET` 和 `PUT`, `POST`等等，因为 `@RequestMapping` 默认映射所有的HTTP操作。使用 `@RequestMapping(method=GET)` 缩小这种映射。
 
-{RequestParam}[`@RequestParam`] binds the value of the query String parameter `name` into the `name` parameter of the `greeting()` method. This query String parameter is not `required`; if it is absent in the request, the `defaultValue` of "World" is used. The value of the `name` parameter is added to a {Model}[`Model`] object, ultimately making it accessible to the view template.
+{RequestParam}[`@RequestParam`] 绑定查询字符串中的参数到 `greeting()` 方法的 `name` 参数中。查询字符串参数并不是 `required`;如果它在请求中不存在，那么将使用 "World" 这个 `defaultValue` 。 `name` 参数的值被添加到一个 {Model}[`Model`] 对象上，最终使视图模板可以访问它。
 
-The implementation of the method body relies on a link:/understanding/view-templates[view technology], in this case http://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html[Thymeleaf], to perform server-side rendering of the HTML. Thymeleaf parses the `greeting.html` template below and evaluates the `th:text` expression to render the value of the `${name}` parameter that was set in the controller.
+方法的主体实现依赖于 link:/understanding/view-templates[视图技术]执行服务器端的HTML渲染。在这个例子中是 http://www.thymeleaf.org/doc/tutorials/2.1/thymeleafspring.html[Thymeleaf] 。 Thymeleaf 自动解析 `greeting.html` 模板，在对 `th:text` 表达式求值的过程中将控制器中设置的 `${name}` 的值渲染到模板中。
 
 `src/main/resources/templates/greeting.html`
 [source,html]
@@ -81,18 +81,18 @@ The implementation of the method body relies on a link:/understanding/view-templ
 include::complete/src/main/resources/templates/greeting.html[]
 ----
 
-== Developing web apps
+== 开发Web应用程序
 
-A common feature of developing web apps is coding a change, restarting your app, and refreshing the browser to view the change. This entire process can eat up a lot of time. To speed up the cycle of things, Spring Boot comes with a handy module known as http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools].
+开发Web应用程序的一个共同特点是编码更改，重新启动应用程序，并刷新浏览器以查看更改。整个过程可以消耗大量的时间。为了加快循环的步骤，春天的启动是一个方便的模块称为 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-devtools[spring-boot-devtools] 。
 
-* Enable http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-hotswapping[hot swapping]
-* Switches template engines to disable caching
-* Enables LiveReload to refresh browser automatically
-* Other reasonable defaults based on development instead of production
+* 启用 http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-hotswapping[热部署]
+* 切换模板引擎以禁用缓存
+* 使livereload自动刷新浏览器
+* 基于进化而不是产品的其他合理默认值
 
-== Make the application executable
+== 使应用程序可执行
 
-Although it is possible to package this service as a traditional link:/understanding/WAR[WAR] file for deployment to an external application server, the simpler approach demonstrated below creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java `main()` method. Along the way, you use Spring's support for embedding the link:/understanding/Tomcat[Tomcat] servlet container as the HTTP runtime, instead of deploying to an external instance.
+虽然可以将此服务打包为一个传统的 link:/understanding/WAR[WAR] 文件用于部署到外部应用服务器，更为简单的方法是创建了一个独立的应用程序。通过一个 good old Java `main()`方法，你能将一切打包成为一个单一的克执行 JAR 文件。在这一过程中，您使用Spring的提供的 link:/understanding/Tomcat[Tomcat]  servlet容器作为HTTP运行时，而不是将它部署的到一个外部实例在中。
 
 
 `src/main/java/hello/Application.java`
@@ -108,10 +108,10 @@ include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/ma
 include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/master/build_an_executable_jar_with_both.adoc[]
 
 
-Logging output is displayed. The app should be up and running within a few seconds.
+日志输出显示。应用程序应该在几秒钟内启动和运行。
 
 
-== Test the App
+== 测试应用程序
 
 Now that the web site is running, visit http://localhost:8080/greeting, where you see:
 
