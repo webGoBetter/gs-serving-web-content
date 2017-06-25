@@ -16,7 +16,7 @@ projects: [spring-framework]
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-serving-web-content
-This guide walks you through the process of creating a "hello world" web site with Spring.
+本指南将帮助您了解创建带有Spring的“Hello World”网站的过程。
 
 == What you'll build
 
