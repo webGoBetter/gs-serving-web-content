@@ -18,26 +18,26 @@ projects: [spring-framework]
 :project_id: gs-serving-web-content
 本指南将帮助您了解创建带有Spring的“Hello World”网站的过程。
 
-== What you'll build
+== 你将做出什么
 
-You'll build an application that has a static home page, and also will accept HTTP GET requests at:
+您将构建一个具有静态主页的应用程序，并且将接受HTTP GET请求：
 
     http://localhost:8080/greeting
 
-and respond with a web page displaying HTML. The body of the HTML contains a greeting:
+并用显示HTML的网页响应。HTML的正文包含问候语：
 
     "Hello, World!"
 
-You can customize the greeting with an optional `name` parameter in the query string:
+可以在查询字符串中使用可选的“名称”参数定制问候语：
 
     http://localhost:8080/greeting?name=User
 
-The `name` parameter value overrides the default value of "World" and is reflected in the response:
+“name”参数值重写默认值“World”，并反映在响应中：
 
     "Hello, User!"
 
 
-== What you'll need
+== 你需要什么
 
 :java_version: 1.8
 include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/master/prereq_editor_jdk_buildtools.adoc[]
@@ -55,9 +55,9 @@ include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/ma
 
 
 [[initial]]
-== Create a web controller
+== 创建Web控制器
 
-In Spring's approach to building web sites, HTTP requests are handled by a controller. You can easily identify these requests by the {Controller}[`@Controller`] annotation. In the following example, the GreetingController handles GET requests for /greeting by returning the name of a {View}[`View`], in this case, "greeting". A `View` is responsible for rendering the HTML content:
+在Spring构建Web站点的方法中，HTTP请求由控制器处理。您可以很容易地通过{Controller}[`@Controller`]注释来标识这些请求。 在接下来的例子中，GreetingControoler 为/greeting 处理 GET 请求，通过返回{View}[`View`]的名字,在这个例子中就是“greeting”。`View`负责渲染HTML内容：
 
 `src/main/java/hello/GreetingController.java`
 [source,java]
