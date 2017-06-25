@@ -67,7 +67,7 @@ include::complete/src/main/java/hello/GreetingController.java[]
 
 这个控制器简洁明了，但是做了很多。让我们一步一步地分解它。
 
- `@RequestMapping` 注解确保 `/greeting` 的HTTP请求映射到 `greeting()` 方法上。
+ ‘@RequestMapping’ 注解确保 `/greeting` 的HTTP请求映射到 `greeting()` 方法上。
 
 NOTE: 以上例子不指定 `GET` 和 `PUT`, `POST`等等，因为 `@RequestMapping` 默认映射所有的HTTP操作。使用 `@RequestMapping(method=GET)` 缩小这种映射。
 
