@@ -113,19 +113,19 @@ include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/ma
 
 == 测试应用程序
 
-Now that the web site is running, visit http://localhost:8080/greeting, where you see:
+现在网站运行，访问 http://localhost:8080/greeting，你会看到：
 
     "Hello, World!"
 
-Provide a `name` query string parameter with http://localhost:8080/greeting?name=User. Notice how the message changes from "Hello, World!" to "Hello, User!":
+通过 http://localhost:8080/greeting?name=User 提供一个查询字符串参数 `name` 。注意消息是如何从 "Hello, World!"变成"Hello, User!"的：
 
     "Hello, User!"
 
-This change demonstrates that the {RequestParam}[`@RequestParam`] arrangement in `GreetingController` is working as expected. The `name` parameter has been given a default value of "World", but can always be explicitly overridden through the query string.
+这种变化表明， `GreetingController` 中的 {RequestParam}[`@RequestParam`] 和预期的一样工作。`name` 被赋予了默认值 "World"，但始终可以通过查询字符串显式重写。`name` parameter has been given a default value of "World", but can always be explicitly overridden through the query string.
 
-== Add a Home Page
+== 添加主页
 
-Static resources, like HTML or JavaScript or CSS, can easily be served from your Spring Boot application just be dropping them into the right place in the source code. By default Spring Boot serves static content from resources in the classpath at "/static" (or "/public"). The `index.html` resource is special because it is used as a "welcome page" if it exists, which means it will be served up as the root resource, i.e. at `http://localhost:8080/` in our example. So create this file:
+静态资源，如HTML、JavaScript或CSS，可以很容易地从 Spring Boot应用程序中获得，只需将它们放入源代码中的正确位置即可。默认情况下，通过类路径下的"/static" (or "/public")的资源，Spring boot提供了静态内容。 `index.html` 资源比较特别，因为如果她存在的话，会被用作"welcome page"，这以为着它是root资源，我们这个例子即是 `http://localhost:8080/。所以创建这个文件：
 
 `src/main/resources/static/index.html`
 [source,html]
@@ -133,11 +133,11 @@ Static resources, like HTML or JavaScript or CSS, can easily be served from your
 include::complete/src/main/resources/static/index.html[]
 ----
 
-and when you restart the app you will see the HTML at http://localhost:8080/.
+当你重新启动应用程序你就会在http://localhost:8080/会看到HTML。
 
-== Summary
+== 总结
 
-Congratulations! You have just developed a web page using Spring.
+祝贺你!您刚刚使用Spring开发了一个Web页面。
 
 include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/master/footer.adoc[]
 
