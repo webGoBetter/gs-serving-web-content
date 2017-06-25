@@ -57,7 +57,7 @@ include::https://raw.githubusercontent.com/webGoBetter/getting-started-macros/ma
 [[initial]]
 == 创建Web控制器
 
-在Spring构建Web站点的方法中，HTTP请求由控制器处理。您可以很容易地通过{Controller}[`@Controller`]注释来标识这些请求。 在接下来的例子中，GreetingControoler 为/greeting 处理 GET 请求，通过返回{View}[`View`]的名字,在这个例子中就是“greeting”。`View`负责渲染HTML内容：
+在Spring构建Web站点的方法中，HTTP请求由控制器处理。您可以很容易地通过 {Controller}[`@Controller`] 注释来标识这些请求。 在接下来的例子中，GreetingControoler 为/greeting 处理 GET 请求，通过返回 {View}[`View`] 的名字,在这个例子中就是“greeting”。`View`负责渲染HTML内容：
 
 `src/main/java/hello/GreetingController.java`
 [source,java]
