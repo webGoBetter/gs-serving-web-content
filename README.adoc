@@ -69,7 +69,7 @@ include::complete/src/main/java/hello/GreetingController.java[]
 
 ‘@RequestMapping’ 注解确保 `/greeting` 的HTTP请求映射到 `greeting()` 方法上。
 
-NOTE: 以上例子不指定 `GET` 和 `PUT`, `POST`等等，因为 `@RequestMapping` 默认映射所有的HTTP操作。使用 `@RequestMapping(method=GET)` 缩小这种映射。
+NOTE: 以上例子不指定 `GET` 和 `PUT`, `POST` 等等，因为 `@RequestMapping` 默认映射所有的HTTP操作。使用 `@RequestMapping(method=GET)` 缩小这种映射。
 
 {RequestParam}[`@RequestParam`] 绑定查询字符串中的参数到 `greeting()` 方法的 `name` 参数中。查询字符串参数并不是 `required`;如果它在请求中不存在，那么将使用 "World" 这个 `defaultValue` 。 `name` 参数的值被添加到一个 {Model}[`Model`] 对象上，最终使视图模板可以访问它。
 
